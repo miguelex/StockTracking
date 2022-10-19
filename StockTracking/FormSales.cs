@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace StockTracking
 {
-    public partial class FormCategory : Form
+    public partial class FormSales : Form
     {
-        public FormCategory()
+        public FormSales()
         {
             InitializeComponent();
+        }
+
+        private void txtProductSalesAmount_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = General.isNumber(e);
         }
 
         private void btnClose_Click(object sender, EventArgs e)

@@ -21,5 +21,13 @@ namespace StockTracking
         {
             this.Close();    
         }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            FormCustomer frm = new FormCustomer();
+            this.Hide();
+            frm.ShowDialog();
+            this.Visible = true;
+        }
     }
 }

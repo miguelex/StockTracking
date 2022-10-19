@@ -10,11 +10,19 @@ using System.Windows.Forms;
 
 namespace StockTracking
 {
-    public partial class FormCategory : Form
+    public partial class FormDeleted : Form
     {
-        public FormCategory()
+        public FormDeleted()
         {
             InitializeComponent();
+        }
+
+        private void FormDeleted_Load(object sender, EventArgs e)
+        {
+            cmbDeletedData.Items.Add("Category");
+            cmbDeletedData.Items.Add("Customer");
+            cmbDeletedData.Items.Add("Product");
+            cmbDeletedData.Items.Add("Sale");
         }
 
         private void btnClose_Click(object sender, EventArgs e)

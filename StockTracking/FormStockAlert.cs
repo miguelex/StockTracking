@@ -10,24 +10,18 @@ using System.Windows.Forms;
 
 namespace StockTracking
 {
-    public partial class FormCategoryList : Form
+    public partial class FormStockAlert : Form
     {
-        public FormCategoryList()
+        public FormStockAlert()
         {
             InitializeComponent();
         }
 
-        private void btnClose_Click(object sender, EventArgs e)
+        private void btnOK_Click(object sender, EventArgs e)
         {
-            this.Close();
-        }
-
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-            FormCategory frm = new FormCategory();
+            FormMain frm = new FormMain();
             this.Hide();
             frm.ShowDialog();
-            this.Visible = true;
         }
     }
 }

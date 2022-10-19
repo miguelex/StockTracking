@@ -114,6 +114,18 @@
     <Compile Include="FormCustomerList.Designer.cs">
       <DependentUpon>FormCustomerList.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormDeleted.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDeleted.Designer.cs">
+      <DependentUpon>FormDeleted.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormProduct.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,6 +137,24 @@
     </Compile>
     <Compile Include="FormProductList.Designer.cs">
       <DependentUpon>FormProductList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSales.Designer.cs">
+      <DependentUpon>FormSales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSalesList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSalesList.Designer.cs">
+      <DependentUpon>FormSalesList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormStockAlert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormStockAlert.Designer.cs">
+      <DependentUpon>FormStockAlert.cs</DependentUpon>
     </Compile>
     <Compile Include="General.cs" />
     <Compile Include="Program.cs" />
@@ -144,11 +174,26 @@
     <EmbeddedResource Include="FormCustomerList.resx">
       <DependentUpon>FormCustomerList.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormDeleted.resx">
+      <DependentUpon>FormDeleted.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormProduct.resx">
       <DependentUpon>FormProduct.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormProductList.resx">
       <DependentUpon>FormProductList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSales.resx">
+      <DependentUpon>FormSales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSalesList.resx">
+      <DependentUpon>FormSalesList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormStockAlert.resx">
+      <DependentUpon>FormStockAlert.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -158,6 +203,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EntityDeploy Include="DAL\DataModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -191,6 +237,13 @@
       <DependentUpon>DataModel.edmx</DependentUpon>
       <LastGenOutput>DataModel.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\warehouse.png" />
+    <None Include="Resources\tag.png" />
+    <None Include="Resources\maintenance.png" />
+    <None Include="Resources\icon.png" />
+    <None Include="Resources\human-resources-symbol.png" />
+    <None Include="Resources\gift.png" />
+    <None Include="Resources\exit.png" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
