@@ -59,6 +59,7 @@
             this.txtCustomerName.Name = "txtCustomerName";
             this.txtCustomerName.Size = new System.Drawing.Size(154, 26);
             this.txtCustomerName.TabIndex = 0;
+            this.txtCustomerName.TextChanged += new System.EventHandler(this.txtCustomerName_TextChanged);
             // 
             // CustomerName
             // 
@@ -146,6 +147,7 @@
             this.Name = "FormCustomerList";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Customer List";
+            this.Load += new System.EventHandler(this.FormCustomerList_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);

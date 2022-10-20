@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using StockTracking.BLL;
+using StockTracking.DAL.DTO;
 
 namespace StockTracking
 {
@@ -35,9 +37,84 @@ namespace StockTracking
         private void btnAdd_Click(object sender, EventArgs e)
         {
             FormProduct frm = new FormProduct();
+            frm.dto = dto;
             this.Hide();
             frm.ShowDialog();
             this.Visible = true;
+            dto = bll.Select();
+            dataGridView1.DataSource = dto.Products;
+            CleanFilters();
+        }
+
+        ProductBLL bll = new ProductBLL();
+        ProductDTO dto = new ProductDTO();
+        private void FormProductList_Load(object sender, EventArgs e)
+        {
+            dto = bll.Select();
+            cmbCategory.DataSource = dto.Categories;
+            cmbCategory.DisplayMember = "CategoryName";
+            cmbCategory.ValueMember = "ID";
+            cmbCategory.SelectedIndex = -1;
+            dataGridView1.DataSource = dto.Products;
+            dataGridView1.Columns[0].HeaderText = "Product Name";
+            dataGridView1.Columns[1].HeaderText = "Category Name";
+            dataGridView1.Columns[2].HeaderText = "Stock Amount";
+            dataGridView1.Columns[3].HeaderText = "Price";
+            dataGridView1.Columns[4].Visible = false;
+            dataGridView1.Columns[5].Visible = false;
+            dataGridView1.Columns[6].Visible = false;
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            List<ProductDetailDTO> list = dto.Products;
+            if (txtProductName.Text.Trim() != null)
+                list = list.Where(x => x.ProductName.Contains(txtProductName.Text)).ToList();
+            if (cmbCategory.SelectedIndex != -1)
+                list = list.Where(x => x.CategoryID == Convert.ToInt32(cmbCategory.SelectedValue)).ToList();
+            if (txtPrice.Text.Trim() != "")
+            {
+                if (rbPriceEqual.Checked)
+                    list = list.Where(x => x.Price == Convert.ToInt32(txtPrice.Text)).ToList();
+                else if (rbPriceMore.Checked)
+                    list = list.Where(x => x.Price > Convert.ToInt32(txtPrice.Text)).ToList();
+                else if (rbPriceLess.Checked)
+                    list = list.Where(x => x.Price < Convert.ToInt32(txtPrice.Text)).ToList();
+                else
+                    MessageBox.Show("Please select a criterion from price group");
+            }
+            if (txtStock.Text.Trim() != "")
+            {
+                if (rbStockEqual.Checked)
+                    list = list.Where(x => x.StockAmount == Convert.ToInt32(txtStock.Text)).ToList();
+                else if (rbStockMore.Checked)
+                    list = list.Where(x => x.Price > Convert.ToInt32(txtStock.Text)).ToList();
+                else if (rbStockLess.Checked)
+                    list = list.Where(x => x.Price < Convert.ToInt32(txtStock.Text)).ToList();
+                else
+                    MessageBox.Show("Please select a criterion from Stock group");
+            }
+            dataGridView1.DataSource = list;
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            CleanFilters();
+        }
+
+        private void CleanFilters()
+        {
+            txtPrice.Clear();
+            txtProductName.Clear();
+            txtStock.Clear();
+            cmbCategory.SelectedIndex = -1;
+            rbPriceEqual.Checked = false;
+            rbPriceLess.Checked = false;
+            rbPriceMore.Checked = false;
+            rbStockEqual.Checked = false;
+            rbStockLess.Checked = false;
+            rbStockMore.Checked = false;
+            dataGridView1.DataSource = dto.Products;
         }
     }
 }

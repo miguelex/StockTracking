@@ -30,13 +30,13 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.rbStockMOre = new System.Windows.Forms.RadioButton();
+            this.rbStockMore = new System.Windows.Forms.RadioButton();
             this.rbStockEqual = new System.Windows.Forms.RadioButton();
             this.rbStockLess = new System.Windows.Forms.RadioButton();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.rbPriceMOre = new System.Windows.Forms.RadioButton();
+            this.rbPriceMore = new System.Windows.Forms.RadioButton();
             this.rbPriceEqual = new System.Windows.Forms.RadioButton();
             this.rbPriceLess = new System.Windows.Forms.RadioButton();
             this.txtStock = new System.Windows.Forms.TextBox();
@@ -45,7 +45,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.cmbCategory = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textProductName = new System.Windows.Forms.TextBox();
+            this.txtProductName = new System.Windows.Forms.TextBox();
             this.ProductName = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnClose = new System.Windows.Forms.Button();
@@ -72,7 +72,7 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.cmbCategory);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.textProductName);
+            this.panel1.Controls.Add(this.txtProductName);
             this.panel1.Controls.Add(this.ProductName);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -82,7 +82,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.rbStockMOre);
+            this.groupBox1.Controls.Add(this.rbStockMore);
             this.groupBox1.Controls.Add(this.rbStockEqual);
             this.groupBox1.Controls.Add(this.rbStockLess);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -93,17 +93,17 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Stock";
             // 
-            // rbStockMOre
+            // rbStockMore
             // 
-            this.rbStockMOre.AutoSize = true;
-            this.rbStockMOre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbStockMOre.Location = new System.Drawing.Point(149, 18);
-            this.rbStockMOre.Name = "rbStockMOre";
-            this.rbStockMOre.Size = new System.Drawing.Size(67, 24);
-            this.rbStockMOre.TabIndex = 2;
-            this.rbStockMOre.TabStop = true;
-            this.rbStockMOre.Text = "More";
-            this.rbStockMOre.UseVisualStyleBackColor = true;
+            this.rbStockMore.AutoSize = true;
+            this.rbStockMore.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbStockMore.Location = new System.Drawing.Point(149, 18);
+            this.rbStockMore.Name = "rbStockMore";
+            this.rbStockMore.Size = new System.Drawing.Size(67, 24);
+            this.rbStockMore.TabIndex = 2;
+            this.rbStockMore.TabStop = true;
+            this.rbStockMore.Text = "More";
+            this.rbStockMore.UseVisualStyleBackColor = true;
             // 
             // rbStockEqual
             // 
@@ -138,6 +138,7 @@
             this.btnClear.TabIndex = 7;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnSearch
             // 
@@ -148,10 +149,11 @@
             this.btnSearch.TabIndex = 6;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.rbPriceMOre);
+            this.groupBox2.Controls.Add(this.rbPriceMore);
             this.groupBox2.Controls.Add(this.rbPriceEqual);
             this.groupBox2.Controls.Add(this.rbPriceLess);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -162,17 +164,17 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Price";
             // 
-            // rbPriceMOre
+            // rbPriceMore
             // 
-            this.rbPriceMOre.AutoSize = true;
-            this.rbPriceMOre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbPriceMOre.Location = new System.Drawing.Point(149, 18);
-            this.rbPriceMOre.Name = "rbPriceMOre";
-            this.rbPriceMOre.Size = new System.Drawing.Size(67, 24);
-            this.rbPriceMOre.TabIndex = 2;
-            this.rbPriceMOre.TabStop = true;
-            this.rbPriceMOre.Text = "More";
-            this.rbPriceMOre.UseVisualStyleBackColor = true;
+            this.rbPriceMore.AutoSize = true;
+            this.rbPriceMore.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbPriceMore.Location = new System.Drawing.Point(149, 18);
+            this.rbPriceMore.Name = "rbPriceMore";
+            this.rbPriceMore.Size = new System.Drawing.Size(67, 24);
+            this.rbPriceMore.TabIndex = 2;
+            this.rbPriceMore.TabStop = true;
+            this.rbPriceMore.Text = "More";
+            this.rbPriceMore.UseVisualStyleBackColor = true;
             // 
             // rbPriceEqual
             // 
@@ -255,13 +257,13 @@
             this.label2.TabIndex = 8;
             this.label2.Text = "Category";
             // 
-            // textProductName
+            // txtProductName
             // 
-            this.textProductName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textProductName.Location = new System.Drawing.Point(144, 27);
-            this.textProductName.Name = "textProductName";
-            this.textProductName.Size = new System.Drawing.Size(154, 26);
-            this.textProductName.TabIndex = 0;
+            this.txtProductName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtProductName.Location = new System.Drawing.Point(144, 27);
+            this.txtProductName.Name = "txtProductName";
+            this.txtProductName.Size = new System.Drawing.Size(154, 26);
+            this.txtProductName.TabIndex = 0;
             // 
             // ProductName
             // 
@@ -349,6 +351,7 @@
             this.Name = "FormProductList";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Product List";
+            this.Load += new System.EventHandler(this.FormProductList_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -370,12 +373,12 @@
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TextBox textProductName;
+        private System.Windows.Forms.TextBox txtProductName;
         private System.Windows.Forms.Label ProductName;
         private System.Windows.Forms.ComboBox cmbCategory;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.RadioButton rbPriceMOre;
+        private System.Windows.Forms.RadioButton rbPriceMore;
         private System.Windows.Forms.RadioButton rbPriceEqual;
         private System.Windows.Forms.RadioButton rbPriceLess;
         private System.Windows.Forms.TextBox txtStock;
@@ -383,7 +386,7 @@
         private System.Windows.Forms.TextBox txtPrice;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton rbStockMOre;
+        private System.Windows.Forms.RadioButton rbStockMore;
         private System.Windows.Forms.RadioButton rbStockEqual;
         private System.Windows.Forms.RadioButton rbStockLess;
         private System.Windows.Forms.Button btnClear;

@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textProductName = new System.Windows.Forms.TextBox();
+            this.txtProductName = new System.Windows.Forms.TextBox();
             this.ProductName = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtPrice = new System.Windows.Forms.TextBox();
@@ -38,13 +38,13 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // textProductName
+            // txtProductName
             // 
-            this.textProductName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textProductName.Location = new System.Drawing.Point(180, 39);
-            this.textProductName.Name = "textProductName";
-            this.textProductName.Size = new System.Drawing.Size(154, 26);
-            this.textProductName.TabIndex = 0;
+            this.txtProductName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtProductName.Location = new System.Drawing.Point(180, 39);
+            this.txtProductName.Name = "txtProductName";
+            this.txtProductName.Size = new System.Drawing.Size(154, 26);
+            this.txtProductName.TabIndex = 0;
             // 
             // ProductName
             // 
@@ -114,6 +114,7 @@
             this.btnSave.TabIndex = 3;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // FormProduct
             // 
@@ -126,11 +127,12 @@
             this.Controls.Add(this.txtPrice);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textProductName);
+            this.Controls.Add(this.txtProductName);
             this.Controls.Add(this.ProductName);
             this.Name = "FormProduct";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Product";
+            this.Load += new System.EventHandler(this.FormProduct_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -138,7 +140,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textProductName;
+        private System.Windows.Forms.TextBox txtProductName;
         private System.Windows.Forms.Label ProductName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtPrice;

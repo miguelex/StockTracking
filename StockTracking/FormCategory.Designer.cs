@@ -54,6 +54,7 @@
             this.btnSave.TabIndex = 6;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // txtCategoryName
             // 
@@ -85,6 +86,7 @@
             this.Name = "FormCategory";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Category";
+            this.Load += new System.EventHandler(this.FormCategory_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
