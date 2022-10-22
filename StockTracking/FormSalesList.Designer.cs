@@ -32,17 +32,17 @@
             this.btnClear = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
             this.chDate = new System.Windows.Forms.CheckBox();
-            this.dtEnd = new System.Windows.Forms.DateTimePicker();
+            this.dpEnd = new System.Windows.Forms.DateTimePicker();
             this.dpStart = new System.Windows.Forms.DateTimePicker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.rbSalesAmountMore = new System.Windows.Forms.RadioButton();
-            this.rbSalesAmountEqual = new System.Windows.Forms.RadioButton();
-            this.rbSalesAmountLess = new System.Windows.Forms.RadioButton();
+            this.rbSalesMore = new System.Windows.Forms.RadioButton();
+            this.rbSalesEqual = new System.Windows.Forms.RadioButton();
+            this.rbSalesLess = new System.Windows.Forms.RadioButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.rbPriceMOre = new System.Windows.Forms.RadioButton();
+            this.rbPriceMore = new System.Windows.Forms.RadioButton();
             this.rbPriceEqual = new System.Windows.Forms.RadioButton();
             this.rbPriceLess = new System.Windows.Forms.RadioButton();
-            this.txtStock = new System.Windows.Forms.TextBox();
+            this.txtSalesAmount = new System.Windows.Forms.TextBox();
             this.lblStock = new System.Windows.Forms.Label();
             this.txtPrice = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -50,7 +50,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textProductName = new System.Windows.Forms.TextBox();
+            this.txtProductName = new System.Windows.Forms.TextBox();
             this.ProductName = new System.Windows.Forms.Label();
             this.txtCustomerName = new System.Windows.Forms.TextBox();
             this.CustomerName = new System.Windows.Forms.Label();
@@ -72,11 +72,11 @@
             this.panel1.Controls.Add(this.btnClear);
             this.panel1.Controls.Add(this.btnSearch);
             this.panel1.Controls.Add(this.chDate);
-            this.panel1.Controls.Add(this.dtEnd);
+            this.panel1.Controls.Add(this.dpEnd);
             this.panel1.Controls.Add(this.dpStart);
             this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Controls.Add(this.groupBox2);
-            this.panel1.Controls.Add(this.txtStock);
+            this.panel1.Controls.Add(this.txtSalesAmount);
             this.panel1.Controls.Add(this.lblStock);
             this.panel1.Controls.Add(this.txtPrice);
             this.panel1.Controls.Add(this.label1);
@@ -84,7 +84,7 @@
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.textProductName);
+            this.panel1.Controls.Add(this.txtProductName);
             this.panel1.Controls.Add(this.ProductName);
             this.panel1.Controls.Add(this.txtCustomerName);
             this.panel1.Controls.Add(this.CustomerName);
@@ -103,6 +103,7 @@
             this.btnClear.TabIndex = 9;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnSearch
             // 
@@ -113,6 +114,7 @@
             this.btnSearch.TabIndex = 8;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // chDate
             // 
@@ -125,13 +127,13 @@
             this.chDate.Text = "Date";
             this.chDate.UseVisualStyleBackColor = true;
             // 
-            // dtEnd
+            // dpEnd
             // 
-            this.dtEnd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtEnd.Location = new System.Drawing.Point(485, 227);
-            this.dtEnd.Name = "dtEnd";
-            this.dtEnd.Size = new System.Drawing.Size(281, 26);
-            this.dtEnd.TabIndex = 6;
+            this.dpEnd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dpEnd.Location = new System.Drawing.Point(485, 227);
+            this.dpEnd.Name = "dpEnd";
+            this.dpEnd.Size = new System.Drawing.Size(281, 26);
+            this.dpEnd.TabIndex = 6;
             // 
             // dpStart
             // 
@@ -143,9 +145,9 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.rbSalesAmountMore);
-            this.groupBox1.Controls.Add(this.rbSalesAmountEqual);
-            this.groupBox1.Controls.Add(this.rbSalesAmountLess);
+            this.groupBox1.Controls.Add(this.rbSalesMore);
+            this.groupBox1.Controls.Add(this.rbSalesEqual);
+            this.groupBox1.Controls.Add(this.rbSalesLess);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(334, 145);
             this.groupBox1.Name = "groupBox1";
@@ -154,45 +156,45 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Sales Amount";
             // 
-            // rbSalesAmountMore
+            // rbSalesMore
             // 
-            this.rbSalesAmountMore.AutoSize = true;
-            this.rbSalesAmountMore.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbSalesAmountMore.Location = new System.Drawing.Point(149, 18);
-            this.rbSalesAmountMore.Name = "rbSalesAmountMore";
-            this.rbSalesAmountMore.Size = new System.Drawing.Size(67, 24);
-            this.rbSalesAmountMore.TabIndex = 2;
-            this.rbSalesAmountMore.TabStop = true;
-            this.rbSalesAmountMore.Text = "More";
-            this.rbSalesAmountMore.UseVisualStyleBackColor = true;
+            this.rbSalesMore.AutoSize = true;
+            this.rbSalesMore.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbSalesMore.Location = new System.Drawing.Point(149, 18);
+            this.rbSalesMore.Name = "rbSalesMore";
+            this.rbSalesMore.Size = new System.Drawing.Size(67, 24);
+            this.rbSalesMore.TabIndex = 2;
+            this.rbSalesMore.TabStop = true;
+            this.rbSalesMore.Text = "More";
+            this.rbSalesMore.UseVisualStyleBackColor = true;
             // 
-            // rbSalesAmountEqual
+            // rbSalesEqual
             // 
-            this.rbSalesAmountEqual.AutoSize = true;
-            this.rbSalesAmountEqual.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbSalesAmountEqual.Location = new System.Drawing.Point(78, 18);
-            this.rbSalesAmountEqual.Name = "rbSalesAmountEqual";
-            this.rbSalesAmountEqual.Size = new System.Drawing.Size(73, 24);
-            this.rbSalesAmountEqual.TabIndex = 1;
-            this.rbSalesAmountEqual.TabStop = true;
-            this.rbSalesAmountEqual.Text = "Equal";
-            this.rbSalesAmountEqual.UseVisualStyleBackColor = true;
+            this.rbSalesEqual.AutoSize = true;
+            this.rbSalesEqual.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbSalesEqual.Location = new System.Drawing.Point(78, 18);
+            this.rbSalesEqual.Name = "rbSalesEqual";
+            this.rbSalesEqual.Size = new System.Drawing.Size(73, 24);
+            this.rbSalesEqual.TabIndex = 1;
+            this.rbSalesEqual.TabStop = true;
+            this.rbSalesEqual.Text = "Equal";
+            this.rbSalesEqual.UseVisualStyleBackColor = true;
             // 
-            // rbSalesAmountLess
+            // rbSalesLess
             // 
-            this.rbSalesAmountLess.AutoSize = true;
-            this.rbSalesAmountLess.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbSalesAmountLess.Location = new System.Drawing.Point(7, 18);
-            this.rbSalesAmountLess.Name = "rbSalesAmountLess";
-            this.rbSalesAmountLess.Size = new System.Drawing.Size(65, 24);
-            this.rbSalesAmountLess.TabIndex = 0;
-            this.rbSalesAmountLess.TabStop = true;
-            this.rbSalesAmountLess.Text = "Less";
-            this.rbSalesAmountLess.UseVisualStyleBackColor = true;
+            this.rbSalesLess.AutoSize = true;
+            this.rbSalesLess.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbSalesLess.Location = new System.Drawing.Point(7, 18);
+            this.rbSalesLess.Name = "rbSalesLess";
+            this.rbSalesLess.Size = new System.Drawing.Size(65, 24);
+            this.rbSalesLess.TabIndex = 0;
+            this.rbSalesLess.TabStop = true;
+            this.rbSalesLess.Text = "Less";
+            this.rbSalesLess.UseVisualStyleBackColor = true;
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.rbPriceMOre);
+            this.groupBox2.Controls.Add(this.rbPriceMore);
             this.groupBox2.Controls.Add(this.rbPriceEqual);
             this.groupBox2.Controls.Add(this.rbPriceLess);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -203,17 +205,17 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Price";
             // 
-            // rbPriceMOre
+            // rbPriceMore
             // 
-            this.rbPriceMOre.AutoSize = true;
-            this.rbPriceMOre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbPriceMOre.Location = new System.Drawing.Point(149, 18);
-            this.rbPriceMOre.Name = "rbPriceMOre";
-            this.rbPriceMOre.Size = new System.Drawing.Size(67, 24);
-            this.rbPriceMOre.TabIndex = 2;
-            this.rbPriceMOre.TabStop = true;
-            this.rbPriceMOre.Text = "More";
-            this.rbPriceMOre.UseVisualStyleBackColor = true;
+            this.rbPriceMore.AutoSize = true;
+            this.rbPriceMore.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbPriceMore.Location = new System.Drawing.Point(149, 18);
+            this.rbPriceMore.Name = "rbPriceMore";
+            this.rbPriceMore.Size = new System.Drawing.Size(67, 24);
+            this.rbPriceMore.TabIndex = 2;
+            this.rbPriceMore.TabStop = true;
+            this.rbPriceMore.Text = "More";
+            this.rbPriceMore.UseVisualStyleBackColor = true;
             // 
             // rbPriceEqual
             // 
@@ -239,13 +241,13 @@
             this.rbPriceLess.Text = "Less";
             this.rbPriceLess.UseVisualStyleBackColor = true;
             // 
-            // txtStock
+            // txtSalesAmount
             // 
-            this.txtStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtStock.Location = new System.Drawing.Point(458, 113);
-            this.txtStock.Name = "txtStock";
-            this.txtStock.Size = new System.Drawing.Size(154, 26);
-            this.txtStock.TabIndex = 4;
+            this.txtSalesAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSalesAmount.Location = new System.Drawing.Point(458, 113);
+            this.txtSalesAmount.Name = "txtSalesAmount";
+            this.txtSalesAmount.Size = new System.Drawing.Size(154, 26);
+            this.txtSalesAmount.TabIndex = 4;
             // 
             // lblStock
             // 
@@ -314,13 +316,13 @@
             this.label2.TabIndex = 12;
             this.label2.Text = "Category";
             // 
-            // textProductName
+            // txtProductName
             // 
-            this.textProductName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textProductName.Location = new System.Drawing.Point(168, 89);
-            this.textProductName.Name = "textProductName";
-            this.textProductName.Size = new System.Drawing.Size(154, 26);
-            this.textProductName.TabIndex = 1;
+            this.txtProductName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtProductName.Location = new System.Drawing.Point(168, 89);
+            this.txtProductName.Name = "txtProductName";
+            this.txtProductName.Size = new System.Drawing.Size(154, 26);
+            this.txtProductName.TabIndex = 1;
             // 
             // ProductName
             // 
@@ -426,6 +428,7 @@
             this.Name = "FormSalesList";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Sales List";
+            this.Load += new System.EventHandler(this.FormSalesList_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -445,20 +448,20 @@
         private System.Windows.Forms.Label CustomerName;
         private System.Windows.Forms.ComboBox cmbCategory;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textProductName;
+        private System.Windows.Forms.TextBox txtProductName;
         private System.Windows.Forms.Label ProductName;
         private System.Windows.Forms.CheckBox chDate;
-        private System.Windows.Forms.DateTimePicker dtEnd;
+        private System.Windows.Forms.DateTimePicker dpEnd;
         private System.Windows.Forms.DateTimePicker dpStart;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton rbSalesAmountMore;
-        private System.Windows.Forms.RadioButton rbSalesAmountEqual;
-        private System.Windows.Forms.RadioButton rbSalesAmountLess;
+        private System.Windows.Forms.RadioButton rbSalesMore;
+        private System.Windows.Forms.RadioButton rbSalesEqual;
+        private System.Windows.Forms.RadioButton rbSalesLess;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.RadioButton rbPriceMOre;
+        private System.Windows.Forms.RadioButton rbPriceMore;
         private System.Windows.Forms.RadioButton rbPriceEqual;
         private System.Windows.Forms.RadioButton rbPriceLess;
-        private System.Windows.Forms.TextBox txtStock;
+        private System.Windows.Forms.TextBox txtSalesAmount;
         private System.Windows.Forms.Label lblStock;
         private System.Windows.Forms.TextBox txtPrice;
         private System.Windows.Forms.Label label1;
