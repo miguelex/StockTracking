@@ -94,8 +94,6 @@ namespace StockTracking
                 txtPrice.Text = detail.Price.ToString();
                 detail.StockAmount = _selected.StockAmount;
                 detail.ProductID = _selected.ProductID;
-
-
             }
         }
 
