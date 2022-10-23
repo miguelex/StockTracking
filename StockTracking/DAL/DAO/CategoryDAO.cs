@@ -11,12 +11,36 @@ namespace StockTracking.DAL.DAO
     {
         public bool Delete(CATEGORY entity)
         {
-            throw new NotImplementedException();
+            try
+            {
+                CATEGORY category = db.CATEGORies.First(x => x.ID == entity.ID);
+                category.isDeleted = true;
+                category.DeletedDate = DateTime.Today;
+                db.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         public bool GetBack(int ID)
         {
-            throw new NotImplementedException();
+            try
+            {
+                CATEGORY category = db.CATEGORies.First(x => x.ID == ID);
+                category.isDeleted = false;
+                category.DeletedDate = null;
+                db.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         public bool Insert(CATEGORY entity)
@@ -64,6 +88,21 @@ namespace StockTracking.DAL.DAO
 
                 throw;
             }
+        }
+
+        internal List<CategoryDetailDTO> Select(bool isDeleted)
+        {
+            List<CategoryDetailDTO> categories = new List<CategoryDetailDTO>();
+            var list = db.CATEGORies.Where(x => x.isDeleted == isDeleted).ToList();
+            foreach (var item in list)
+            {
+                CategoryDetailDTO dto = new CategoryDetailDTO();
+                dto.ID = item.ID;
+                dto.CategoryName = item.CategoryName;
+                categories.Add(dto);
+            }
+
+            return categories;
         }
     }
 }

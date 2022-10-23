@@ -77,5 +77,27 @@ namespace StockTracking
                 dataGridView1.DataSource = dto.Customers;
             }
         }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (detail.ID == 0)
+                MessageBox.Show("Please select a customer from table");
+            else
+            {
+                DialogResult result = MessageBox.Show("Are you sure", "Warning", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    if (bll.Delete(detail))
+                    {
+
+                        MessageBox.Show("Customer was Deleted");
+                        bll = new CustomerBLL();
+                        dto = bll.Select();
+                        dataGridView1.DataSource = dto.Customers;
+                        txtCustomerName.Clear();
+                    }
+                }
+            }
+        }
     }
 }
