@@ -9,6 +9,8 @@
         <EntityTypeShape EntityType="StockTrackingModel.CUSTOMER" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="StockTrackingModel.PRODUCT" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="StockTrackingModel.SALE" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="StockTrackingModel.ROL" Width="1.5" PointX="5.375" PointY="1.125" />
+        <EntityTypeShape EntityType="StockTrackingModel.USER" Width="1.5" PointX="7.625" PointY="0.875" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

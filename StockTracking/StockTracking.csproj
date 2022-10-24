@@ -60,6 +60,7 @@
     <Compile Include="BLL\IBLL.cs" />
     <Compile Include="BLL\ProductBLL.cs" />
     <Compile Include="BLL\SalesBLL.cs" />
+    <Compile Include="BLL\UserBLL.cs" />
     <Compile Include="DAL\CATEGORY.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
@@ -70,8 +71,10 @@
     <Compile Include="DAL\DAO\CustomerDAO.cs" />
     <Compile Include="DAL\DAO\IDAO.cs" />
     <Compile Include="DAL\DAO\ProductDAO.cs" />
+    <Compile Include="DAL\DAO\RolesDAO.cs" />
     <Compile Include="DAL\DAO\SalesDAO.cs" />
     <Compile Include="DAL\DAO\StockContext.cs" />
+    <Compile Include="DAL\DAO\UserDAO.cs" />
     <Compile Include="DAL\DataModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -93,12 +96,22 @@
     <Compile Include="DAL\DTO\CustomerDTO.cs" />
     <Compile Include="DAL\DTO\ProductDetailDTO.cs" />
     <Compile Include="DAL\DTO\ProductDTO.cs" />
+    <Compile Include="DAL\DTO\RolDetailDTO.cs" />
+    <Compile Include="DAL\DTO\RolDTO.cs" />
     <Compile Include="DAL\DTO\SalesDetailDTO.cs" />
     <Compile Include="DAL\DTO\SalesDTO.cs" />
+    <Compile Include="DAL\DTO\UserDetailDTO.cs" />
+    <Compile Include="DAL\DTO\UserDTO.cs" />
     <Compile Include="DAL\PRODUCT.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="DAL\ROL.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="DAL\SALE.cs">
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\USER.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="FormAddStock.cs">
@@ -137,6 +150,12 @@
     <Compile Include="FormDeleted.Designer.cs">
       <DependentUpon>FormDeleted.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLogin.Designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -173,6 +192,18 @@
     <Compile Include="FormStockAlert.Designer.cs">
       <DependentUpon>FormStockAlert.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUser.Designer.cs">
+      <DependentUpon>FormUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormUserList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUserList.Designer.cs">
+      <DependentUpon>FormUserList.cs</DependentUpon>
+    </Compile>
     <Compile Include="General.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -194,6 +225,9 @@
     <EmbeddedResource Include="FormDeleted.resx">
       <DependentUpon>FormDeleted.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -211,6 +245,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormStockAlert.resx">
       <DependentUpon>FormStockAlert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUser.resx">
+      <DependentUpon>FormUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUserList.resx">
+      <DependentUpon>FormUserList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -254,6 +294,7 @@
       <DependentUpon>DataModel.edmx</DependentUpon>
       <LastGenOutput>DataModel.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\management.png" />
     <None Include="Resources\warehouse.png" />
     <None Include="Resources\tag.png" />
     <None Include="Resources\maintenance.png" />

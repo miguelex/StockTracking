@@ -29,5 +29,7 @@ namespace StockTracking.DAL
         public virtual DbSet<CUSTOMER> CUSTOMERs { get; set; }
         public virtual DbSet<PRODUCT> PRODUCTs { get; set; }
         public virtual DbSet<SALE> SALES { get; set; }
+        public virtual DbSet<ROL> ROLs { get; set; }
+        public virtual DbSet<USER> USERs { get; set; }
     }
 }

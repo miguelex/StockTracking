@@ -74,5 +74,13 @@ namespace StockTracking
         {
             Application.Exit();
         }
+
+        private void btnUser_Click(object sender, EventArgs e)
+        {
+            FormUserList frm = new FormUserList();
+            this.Hide();
+            frm.ShowDialog();
+            this.Visible = true;
+        }
     }
 }
