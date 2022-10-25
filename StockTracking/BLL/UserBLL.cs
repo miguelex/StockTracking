@@ -14,14 +14,28 @@ namespace StockTracking.BLL
     {
         UserDAO usersdao = new UserDAO();
         RolesDAO rolesdao = new RolesDAO();
+
+        public UserDetailDTO Select(UserDetailDTO detail)
+        {
+            USER user = new USER();
+            UserDetailDTO userdto = new UserDetailDTO();
+            user.UserName = detail.UserName;
+            user.Password = detail.Password;
+            userdto = usersdao.Select(user);
+            return userdto;
+        }
+        
         public bool Delete(UserDetailDTO entity)
         {
-            throw new NotImplementedException();
+            USER user = new USER();
+            user.ID = entity.ID;
+            usersdao.Delete(user);
+            return true;
         }
 
         public bool GetBack(UserDetailDTO entity)
         {
-            throw new NotImplementedException();
+            return usersdao.GetBack(entity.ID);
         }
         
         public bool Insert(UserDetailDTO entity)
@@ -43,7 +57,21 @@ namespace StockTracking.BLL
 
         public bool Update(UserDetailDTO entity)
         {
-            throw new NotImplementedException();
+            USER user = new USER();
+            user.ID = entity.ID;
+            user.UserName = entity.UserName;
+            user.Rol_id = entity.Rol_id;
+            user.Password = entity.Password;
+            
+            return usersdao.Update(user);
+        }
+
+        internal UserDTO Select(bool isDeleted)
+        {
+            UserDTO dto = new UserDTO();
+            //dto.Roles = rolesdao.Select(isDeleted);
+            dto.Users = usersdao.Select(isDeleted);
+            return dto;
         }
     }
 }

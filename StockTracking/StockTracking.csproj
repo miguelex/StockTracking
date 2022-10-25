@@ -207,6 +207,7 @@
     <Compile Include="General.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserStatic.cs" />
     <EmbeddedResource Include="FormAddStock.resx">
       <DependentUpon>FormAddStock.cs</DependentUpon>
     </EmbeddedResource>

@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using StockTracking.BLL;
 using StockTracking.DAL.DTO;
+using System.Net;
 
 namespace StockTracking
 {
@@ -26,7 +27,7 @@ namespace StockTracking
         }
 
         public UserDTO dto = new UserDTO();
-        public ProductDetailDTO detail = new ProductDetailDTO();
+        public UserDetailDTO detail = new UserDetailDTO();
         public bool isUpdate = false;
         private void FormUser_Load(object sender, EventArgs e)
         {
@@ -34,6 +35,12 @@ namespace StockTracking
             cmbRol.DisplayMember = "RolName";
             cmbRol.ValueMember = "ID";
             cmbRol.SelectedIndex = -1;
+            if (isUpdate)
+            {
+                txtUserName.Text = detail.UserName;
+                txtPassword.Text = detail.Password;
+                cmbRol.SelectedValue = detail.Rol_id;
+            }
         }
 
         UserBLL bll = new UserBLL();
@@ -47,16 +54,30 @@ namespace StockTracking
                 MessageBox.Show("Password is empty");
             else
             {
-                UserDetailDTO user = new UserDetailDTO();
-                user.UserName = txtUserName.Text;
-                user.Rol_id = Convert.ToInt32(cmbRol.SelectedValue);
-                user.Password = txtPassword.Text;
-                if (bll.Insert(user))
+                if (!isUpdate)
                 {
-                    MessageBox.Show("User was added");
-                    txtUserName.Clear();
-                    txtPassword.Clear();
-                    cmbRol.SelectedIndex = -1;
+                    UserDetailDTO user = new UserDetailDTO();
+                    user.UserName = txtUserName.Text;
+                    user.Rol_id = Convert.ToInt32(cmbRol.SelectedValue);
+                    user.Password = txtPassword.Text;
+                    if (bll.Insert(user))
+                    {
+                        MessageBox.Show("User was added");
+                        txtUserName.Clear();
+                        txtPassword.Clear();
+                        cmbRol.SelectedIndex = -1;
+                    }
+                }
+                else
+                {
+                        detail.UserName = txtUserName.Text;
+                        detail.Password = txtPassword.Text;
+                        detail.Rol_id = Convert.ToInt32(cmbRol.SelectedValue); 
+                        if (bll.Update(detail))
+                        {
+                            MessageBox.Show("User was Updated");
+                            this.Close();
+                        }
                 }
             }
         }

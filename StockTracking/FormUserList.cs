@@ -50,6 +50,67 @@ namespace StockTracking
             dataGridView1.Columns[0].Visible = false;
             dataGridView1.Columns[2].Visible = false;
             dataGridView1.Columns[3].Visible = false;
+            if (dto.Roles.Count > 0)
+                combofull = true;
+        }
+
+        bool combofull = false;
+        private void cmbRol_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (combofull)
+            {
+                List<UserDetailDTO> list = dto.Users.Where(x => x.Rol_id == Convert.ToInt32(cmbRol.SelectedValue)).ToList();
+                dataGridView1.DataSource = list;
+            }
+        }
+
+        UserDetailDTO detail = new UserDetailDTO();
+        private void dataGridView1_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            detail.ID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value);
+            detail.UserName = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+            detail.Password = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
+            detail.Rol_id = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[3].Value);
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            if (detail.ID == 0)
+                MessageBox.Show("Please select a user from table");
+            else
+            {
+                FormUser frm = new FormUser();
+                frm.detail = detail;
+                frm.dto = dto;
+                frm.isUpdate = true;
+                this.Hide();
+                frm.ShowDialog();
+                this.Visible = true;
+                bll = new UserBLL();
+                dto = bll.Select();
+                dataGridView1.DataSource = dto.Users;
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (detail.ID == 0)
+                MessageBox.Show("Please select a customer from table");
+            else
+            {
+                DialogResult result = MessageBox.Show("Are you sure", "Warning", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    if (bll.Delete(detail))
+                    {
+
+                        MessageBox.Show("Customer was Deleted");
+                        bll = new UserBLL();
+                        dto = bll.Select();
+                        dataGridView1.DataSource = dto.Users;
+                    }
+                }
+            }
         }
     }
 }

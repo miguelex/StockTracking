@@ -46,5 +46,20 @@ namespace StockTracking.DAL.DAO
         {
             throw new NotImplementedException();
         }
+
+        internal List<RolDetailDTO> Select(bool isDeleted)
+        {
+            List<RolDetailDTO> roles = new List<RolDetailDTO>();
+            var list = db.ROLs.Where(x => isDeleted == true).ToList();
+            foreach (var item in list)
+            {
+                RolDetailDTO dto = new RolDetailDTO();
+                dto.ID = item.ID;
+                dto.RolName = item.RolName;
+                roles.Add(dto);
+            }
+
+            return roles;
+        }
     }
 }

@@ -67,7 +67,9 @@ namespace StockTracking
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            FormLogin frmMain = new FormLogin();
+            this.Hide();
+            frmMain.ShowDialog();
         }
 
         private void FormMain_FormClosed(object sender, FormClosedEventArgs e)
@@ -81,6 +83,53 @@ namespace StockTracking
             this.Hide();
             frm.ShowDialog();
             this.Visible = true;
+        }
+
+        private void FormMain_Load(object sender, EventArgs e)
+        {
+            switch (UserStatic.RolID)
+            {
+                case 1:
+                    btnCustomer.Visible = false;
+                    btnProduct.Visible = false;
+                    btnAdd.Visible = false;
+                    btnCategory.Visible = false;
+                    btnDeleted.Visible = false;
+                    btnUser.Visible = false;
+                    btnSales.Location = new Point(23, 12);
+                    btnExit.Location = new Point(159, 12);
+                    break;
+                case 2:
+                    btnCustomer.Visible = false;
+                    btnDeleted.Visible = false;
+                    btnSales.Visible = false;
+                    btnUser.Visible = false;
+                    btnProduct.Location = new Point(23, 12);
+                    btnCategory.Location = new Point(159, 12);
+                    btnAdd.Location = new Point(296, 12);
+                    btnExit.Location = new Point(159, 140);
+                    break;
+                case 3:
+                    btnSales.Visible = false;
+                    btnAdd.Visible = false;
+                    btnCategory.Visible = false;
+                    btnDeleted.Visible = false;
+                    btnUser.Visible = false;
+                    btnExit.Location = new Point(296, 12);
+                    break;
+                case 4:
+                    btnCustomer.Visible = false;
+                    btnProduct.Visible = false;
+                    btnSales.Visible = false;
+                    btnAdd.Visible = false;
+                    btnCategory.Visible = false;
+                    btnDeleted.Visible = false;
+                    btnUser.Location = new Point(23, 12);
+                    btnExit.Location = new Point(159, 12);
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }
