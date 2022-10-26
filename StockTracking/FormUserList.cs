@@ -104,7 +104,7 @@ namespace StockTracking
                     if (bll.Delete(detail))
                     {
 
-                        MessageBox.Show("Customer was Deleted");
+                        MessageBox.Show("User was Deleted");
                         bll = new UserBLL();
                         dto = bll.Select();
                         dataGridView1.DataSource = dto.Users;

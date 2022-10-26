@@ -65,13 +65,5 @@ namespace StockTracking.BLL
             
             return usersdao.Update(user);
         }
-
-        internal UserDTO Select(bool isDeleted)
-        {
-            UserDTO dto = new UserDTO();
-            //dto.Roles = rolesdao.Select(isDeleted);
-            dto.Users = usersdao.Select(isDeleted);
-            return dto;
-        }
     }
 }

@@ -12,5 +12,6 @@ namespace StockTracking.DAL.DTO
         public List<CustomerDetailDTO> Customers { get; set; }
         public List<ProductDetailDTO> Products { get; set; }
         public List<CategoryDetailDTO> Categories { get; set; }
+        public List<UserDetailDTO> Users { get; set; }
     }
 }

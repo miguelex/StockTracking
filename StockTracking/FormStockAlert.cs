@@ -64,7 +64,9 @@ namespace StockTracking
         private void btnAdd_Click(object sender, EventArgs e)
         {           
             FormAddStock frm = new FormAddStock();
-            frm._selected = selected;
+            frm.detail = selected;
+            frm.isUpdate = true;
+            
             this.Hide();
             frm.ShowDialog();
             this.Visible = true;

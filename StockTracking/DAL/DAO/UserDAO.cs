@@ -95,7 +95,7 @@ namespace StockTracking.DAL.DAO
             }
         }
         
-        internal UserDetailDTO Select(USER Entity)
+        public UserDetailDTO Select(USER Entity)
         {
             try
             {
@@ -110,7 +110,7 @@ namespace StockTracking.DAL.DAO
             catch (Exception ex)
             {
 
-                return null;
+                throw ex;
             }
         }
         
@@ -137,7 +137,7 @@ namespace StockTracking.DAL.DAO
             catch (Exception ex)
             {
 
-                return null;
+                throw ex;
             }
         }
     }

@@ -21,7 +21,7 @@ namespace StockTracking
 
         SalesDTO dto = new SalesDTO();
         SalesBLL bll = new SalesBLL();
-        UserDTO dtoUser = new UserDTO();
+        
         private void FormDeleted_Load(object sender, EventArgs e)
         {
             cmbDeletedData.Items.Add("Category");
@@ -30,7 +30,6 @@ namespace StockTracking
             cmbDeletedData.Items.Add("Sale");
             cmbDeletedData.Items.Add("Users");
             dto = bll.Select(true);
-            dtoUser = userBLL.Select(true);
             dataGridView1.DataSource = dto.Sales;
             dataGridView1.Columns[0].HeaderText = "Customer Name";
             dataGridView1.Columns[1].HeaderText = "Product Name";
@@ -112,8 +111,8 @@ namespace StockTracking
             }
             else if (cmbDeletedData.SelectedIndex == 4)
             {
-                dataGridView1.DataSource = dtoUser.Users;
-                dataGridView1.Columns[0].HeaderText = "ID";
+                dataGridView1.DataSource = dto.Users;
+                dataGridView1.Columns[0].Visible = false;
                 dataGridView1.Columns[1].HeaderText = "User Name";
                 dataGridView1.Columns[2].Visible = false;
                 dataGridView1.Columns[3].Visible = false;
@@ -158,13 +157,11 @@ namespace StockTracking
                 salesdetail.isProductDeleted = Convert.ToBoolean(dataGridView1.Rows[e.RowIndex].Cells[13].Value);
 
             }
-            else
+            else if (cmbDeletedData.SelectedIndex == 4)
             {
                 userdetail = new UserDetailDTO();
+                userdetail.ID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value);
                 userdetail.UserName = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
-                userdetail.ID = 6;
-                userdetail.Password = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
-                userdetail.Rol_id = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[3].Value);
             }
         }
 
@@ -223,8 +220,8 @@ namespace StockTracking
                 if (userBLL.GetBack(userdetail))
                 {
                     MessageBox.Show("User was Get back");
-                    dtoUser = userBLL.Select(true);
-                    dataGridView1.DataSource = dtoUser.Users;
+                    dto = bll.Select(true);
+                    dataGridView1.DataSource = dto.Users;
                 }
             }
         }

@@ -14,7 +14,6 @@ namespace StockTracking
 {
     public partial class FormAddStock : Form
     {
-        public ProductDetailDTO _selected = null;
         public FormAddStock()
         {
             InitializeComponent();
@@ -49,10 +48,10 @@ namespace StockTracking
             cmbCategory.SelectedIndex = -1;
             if (dto.Categories.Count > 0)
                 combofull = true;
-            if (_selected != null)
+            if (isUpdate)
             {
-                txtProductName.Text = _selected.ProductName;
-                txtPrice.Text = _selected.Price.ToString();
+                txtProductName.Text = detail.ProductName;
+                txtPrice.Text = detail.Price.ToString();
             }
         }
 
@@ -74,10 +73,11 @@ namespace StockTracking
             }
         }
 
-        ProductDetailDTO detail = new ProductDetailDTO();
+        public ProductDetailDTO detail = new ProductDetailDTO();
+        public bool isUpdate = false;
         private void dataGridView1_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
-            if (_selected == null)
+            if (!isUpdate)
             {
                 detail.ProductName = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
                 txtProductName.Text = detail.ProductName;
@@ -88,12 +88,7 @@ namespace StockTracking
             }
             else
             {
-                detail.ProductName = _selected.ProductName;
-                txtProductName.Text = detail.ProductName;
-                detail.Price = _selected.Price;
-                txtPrice.Text = detail.Price.ToString();
-                detail.StockAmount = _selected.StockAmount;
-                detail.ProductID = _selected.ProductID;
+                panel1.Visible = false;
             }
         }
 
