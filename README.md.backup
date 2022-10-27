@@ -33,15 +33,15 @@ A continuación, se enumeran las operacioens que podemos realizar
 
 Las categorías agrupan a los productos en función del criterio de agrupación que deseemos. La categoría deberá estar creada previamente a la adicción de un producto. 
 
-Del mismo modo, tendremos una vista que nos listará todas las categorías que tengamso en el sistema. Desde dicha vista podremos añadir nuevas categoría, editar una previamente existente o eliminarla.
+Del mismo modo, tendremos una vista que nos listará todas las categorías que tengamos en el sistema. Desde dicha vista podremos añadir nuevas categoría, editar una previamente existente o eliminarla.
 
-![image](./images/Categories_list.png "Listado de categorias")
+![image](./images/categories_list.png "Listado de categorias")
 
-![image](./images/New_category.png "Add categoria")
+![image](./images/new_category.png "Add categoria")
 
 ## Productos
 
-Los productos son aquellso items que podemos vender en nuestro sistema.
+Los productos son aquellos items que podemos vender en nuestro sistema.
 
 Tendremos una vista que nos listará todas los que existen en el sistema. Desde dicha vista podremos añadir, eliminar o editar un producto.
 
@@ -81,4 +81,4 @@ El formulario de alta de nuevos clientes solo pedira el nombre del mismo
 
 Todos los borrados del sistema son del tipo soft delete. A traves de este formulario podemos seleccionar la categoria que nos interese y recueprar los datos que seleccionemos
 
-![image](./images/New_sale.png "Add venta")
+![image](./images/deleted_data.png "Recuperar datos")
