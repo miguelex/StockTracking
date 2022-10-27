@@ -35,7 +35,11 @@ Las categorías agrupan a los productos en función del criterio de agrupación 
 
 Del mismo modo, tendremos una vista que nos listará todas las categorías que tengamos en el sistema. Desde dicha vista podremos añadir nuevas categoría, editar una previamente existente o eliminarla.
 
+<<<<<<< HEAD
 ![image](./images/categories_list.png "Listado de categorias")
+=======
+![image](./images/List_categories.png "Listado de categorias")
+>>>>>>> master
 
 ![image](./images/new_category.png "Add categoria")
 
