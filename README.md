@@ -38,7 +38,6 @@ Del mismo modo, tendremos una vista que nos listará todas las categorías que t
 ![image](./images/categories_list.png "Listado de categorias")
 
 ![image](./images/List_categories.png "Listado de categorias")
->>>>>>> master
 
 ![image](./images/new_category.png "Add categoria")
 
