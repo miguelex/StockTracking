@@ -36,6 +36,11 @@ Las categorías agrupan a los productos en función del criterio de agrupación 
 Del mismo modo, tendremos una vista que nos listará todas las categorías que tengamos en el sistema. Desde dicha vista podremos añadir nuevas categoría, editar una previamente existente o eliminarla.
 
 ![image](./images/categories_list.png "Listado de categorias")
+<<<<<<< Updated upstream
+
+![image](./images/List_categories.png "Listado de categorias")
+=======
+>>>>>>> Stashed changes
 
 ![image](./images/new_category.png "Add categoria")
 
@@ -47,35 +52,35 @@ Tendremos una vista que nos listará todas los que existen en el sistema. Desde 
 
 Cada producto nuevo que creemos tendra inicialmente un stock de 0 unidades. Deberemos hacer uso de la siguiente pantalla para añadir stock
 
-![image](./images/Products_list.png "Listado de productos")
+![image](./images/products_list.png "Listado de productos")
 
-![image](./images/New_product.png "Add producto")
+![image](./images/new_product.png "Add producto")
 
 ## Añadir Stock
 
 A través del correspondiente botón (o bien desde el formulario de alerta de stock), podemos acceder al siguiente formulario para modificar el stock de los productos.
 
-![image](./images/Add_stock.png "Add Stock")
+![image](./images/add_stock.png "Add Stock")
 
 ## Ventas
 
 El sistema nos mostrará un listado con todas las ventas que tenemos en el sistema. Nuevamente desde dicha vista podremos añadir una nueva venta así como editar o borrar una que existiera previemente.
 
-![image](./images/Sales_list.png "Listado de ventas")
+![image](./images/sales_list.png "Listado de ventas")
 
 Al hacer la venta se tendrá que elegir el producto y al cliente al que se le vende, indicando la cantidad de unidades que se le vende. Esta implementado la validación para no vender más unidades de las que tenemos en stock
 
-![image](./images/New_sale.png "Add venta")
+![image](./images/new_sale.png "Add venta")
 
 ## Clientes
 
 El sistema tiene un formulario que muestra un listado de todos los clientes en el sistemas, con la posibilidad de busqueda integrada. Desde ese formulario podemos añadir, borrar o editar clientes.
 
-![image](./images/Customers_list.png "Listado de clientes")
+![image](./images/customers_list.png "Listado de clientes")
 
 El formulario de alta de nuevos clientes solo pedira el nombre del mismo
 
-![image](./images/New_customer.png "Add cliente")
+![image](./images/new_customer.png "Add cliente")
 
 ## Recuperación de datos
 
